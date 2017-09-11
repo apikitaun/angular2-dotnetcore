@@ -9,13 +9,15 @@ type SemaphoreProps =
     & typeof SemaphoreStore.actionCreators
     & RouteComponentProps<{}>;
 
+
+  
  class Semaphore extends React.Component<SemaphoreProps, {}> {
     public render() {
         return <div>
             <h1>Semaphore</h1>
             <p>This is a simple example of a React component.</p>
 
-            <p>Current status: <strong>{ this.props.status }</strong></p>
+            <p>Current status: <span className={this.props.textDecoration}>{ this.props.status }</span></p>
 
             <button onClick={ () => { this.props.toRed() } }>To Red</button>
             <button onClick={ () => { this.props.toYellow() } }>To Yellow</button>

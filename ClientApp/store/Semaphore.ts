@@ -5,6 +5,7 @@
 
 export interface SemaphoreState {
     status: number;
+    textDecoration: string;
 }
 
 /// -----------------
@@ -27,11 +28,17 @@ export const actionCreators = {
 export const reducer: Reducer<SemaphoreState> = (state: SemaphoreState, action: KnownAction) => {
     switch (action.type) {
         case 'TO_RED':
-            return { status: 0 };
+            return { status: 0,
+                     textDecoration:"semaphoreRed" 
+                   };
         case 'TO_YELLOW':
-            return { status: 1 };
+            return { status: 1,
+                     textDecoration:"semaphoreYellow"
+                   };
         case 'TO_GREEN':
-            return { status: 2 };
+            return { status: 2,
+                     textDecoration:"semaphoreGreen"
+                   };
         default:
             // The following line guarantees that every action in the KnownAction union has been covered by a case above
             const exhaustiveCheck: never = action;
@@ -39,7 +46,8 @@ export const reducer: Reducer<SemaphoreState> = (state: SemaphoreState, action: 
 
     // For unrecognized actions (or in cases where actions have no effect), must return the existing state
     //  (or default initial state if none was supplied)
-    return state || { status: 0 };
+    return state || { status: 0,
+                      textDecoration: "semaphoreRed" };
 };
 
 

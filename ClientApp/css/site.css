@@ -64,3 +64,12 @@
         text-overflow: ellipsis;
     }
 }
+.semaphoreRed {
+    color: red;
+}
+.semaphoreYellow {
+    color: yellow;
+}
+.semaphoreGreen {
+    color: green;
+}
