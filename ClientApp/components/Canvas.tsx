@@ -3,6 +3,7 @@ import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ApplicationState }  from '../store';
 import * as CanvasStore from '../store/Canvas';
+import '../store/Graphics';
 
 type CanvasProps =
     CanvasStore.CanvasState
@@ -28,7 +29,7 @@ class Canvas extends React.Component<CanvasProps, {}> {
     }
     updateCanvas() {
        var ctx = this.myCanvas.getContext('2d');
-       ctx.fillRect(0,0,100,200);
+       paintGraphics(ctx);
     }
 }
 
